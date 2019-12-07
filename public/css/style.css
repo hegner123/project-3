@@ -1,0 +1,12 @@
+.site-head{
+  background-image: linear-gradient(to right, #87ceeb , #c9e9f6);
+}
+
+body {
+  background-image: repeating-linear-gradient(to bottom, #87ceeb , #45b3e0);
+}
+
+.section-left{
+  background-image: url(https://c8.alamy.com/comp/XD8DJ1/mixed-group-in-business-meeting-XD8DJ1.jpg);
+  height:initial;
+}
