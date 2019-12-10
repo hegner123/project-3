@@ -24,7 +24,7 @@ body {
   background:#1e8bb7;
 }
 /* style for project display area */
-#project-display {
+.project-display {
   padding:100px;
   background:white;
 }
@@ -40,11 +40,6 @@ body {
     color: white;
     border-radius: 20px;
     text-align: left;
-}
-/* Style for gray bar on projects page */
-.banner{
-  padding: 10px;
-  background: grey;
 }
 /* Style for Tasks on projects page */
 .task-item{

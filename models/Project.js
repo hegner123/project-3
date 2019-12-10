@@ -4,7 +4,10 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var TaskSchema = new Schema({
-  title: String,
+  title: {
+type:String,
+required: true
+  },
   text: String,
   dueDate: {
     type: Date,
