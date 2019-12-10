@@ -39,7 +39,7 @@ function refreshProjects(){
   $.getJSON('/projects/find', function (data) {
     console.log(data[0])
     for (i = 0; i < data.length; i++) {
-      $("#project-display").append(' <div class="project-item project-item'+[i]+' mt-5"> <div class="row"> <div class="col-10"> <h5>' + data[i].title + '</h5> <p>' + data[i].body + '</p> <p>Number of Tasks:'+data[i].tasks.length+' </p> <button class="btn btn-blue project-button d-inline-block" data-id="' + data[i]._id + '">Edit Tasks</button> </div> <div class="col-2 tasks"></div></div></div>')
+      $("#project-display").append('<button class="btn btn-blue mt-3" type="button" data-toggle="collapse" data-target="#project-item-'+[i]+'" aria-expanded="false" aria-controls="collapseExample">'+ data[i].title+'</button><br> <div class="collapse" id="project-item-'+[i]+'"><div class="project-item project-item'+[i]+' mt-5"> <div class="row"> <div class="col-10"> <h5>' + data[i].title + '</h5> <p>' + data[i].body + '</p> <p>Number of Tasks:'+data[i].tasks.length+' </p> <button class="btn btn-blue project-button d-inline-block" data-id="' + data[i]._id + '">Edit Tasks</button> </div> <div class=" tasks"></div></div></div></div>')
       $(".projectitem"+[i]+".tasks").empty();
       for (k=0;k<data[i].tasks.length;k++){
         console.log(data[i].tasks[k])

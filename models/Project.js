@@ -19,7 +19,10 @@ required: true
 // This is similar to a Sequelize model
 var ProjectSchema = new Schema({
   // `title` must be of type String
-  title: String,
+  title: {
+    type:String,
+    required:true
+  },
   // `body` must be of type String
   body: String,
 
