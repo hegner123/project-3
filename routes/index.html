@@ -11,86 +11,99 @@
   <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-  </script>
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
   </script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
   </script>
+  <script src="/js/index.js"></script>
   <title>Pro-Project</title>
 </head>
 <body style="padding:0; margin:0">
-<div class="container-fluid p-0 m-0">
-  <div class="jumbotron text-center mb-0 site-head">
-    <h1>Pro-Project</h1>
-  </div>
-</div>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <a class="navbar-brand" href="#">Hidden brand</a>
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
+      <div class="container-fluid p-0">
+        <div class="jumbotron m-0 p-0 img-bck">
+          <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-light p-3">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                  <a class="navbar-brand" href="/"><h1>Pro-Project</h1></a>
+                  <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/projects">Projects</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="#">Home</a>
+                        </li>
+                  </ul>
+                </div>
+              </nav>
+              <!-- Call To Action Buttons -->
+            <div class="row m-0">
+                <div class="col-10 col-md-3 login-block ml-md-auto">
+                  <form class="mt-5 solid-form" id="login-form">
+                    <div class="form-group">
+                      <div class="form-header">
+                        <h4 class="text-white">Login</h4>
+                      </div>
+                      <label for="login-user-name" class="text-white">User Name</label>
+                      <input type="username" class="form-control" id="login-user-name" placeholder="User Name">
+                    </div>
+                    <div class="form-group">
+                      <label for="login-user-password" class="text-white">Password</label>
+                      <input type="password" class="form-control" id="login-user-password" placeholder="Password">
+                    </div>
+                    <div class="form-group form-check" class="text-white">
+                      <input type="checkbox" class="form-check-input" id="rember-me">
+                      <label class="form-check-label text-white" for="remeber-me">Remember Me</label>
+                    </div>
+                    <div class="form-group" >
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </form>
+                </div>
+               </div>
         </div>
-      </nav>
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-9 section-left">
-       
       </div>
 
-      <div class="col-3">
-        <form class="mt-5" id="login-form">
-          <div class="form-group">
-            <label for="login-user-name">User Name</label>
-            <input type="username" class="form-control" id="login-user-name" placeholder="User Name">
+      <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-title">
+                <h3 class="text-center">
+                  Create Project
+                </h3>
+              </div>
+              <div class="card-body mx-auto">
+                  <form id="">
+                      <div class="form-group">
+                    <label for="project-title">Project Title</label>
+                    <input type="text" id="project-title" placeholder="My Project">
+                      </div>
+                      <div class="form-group">
+                        <label for="project-body">Project Description</label>
+                        <textarea type="textarea" id="project-body" placeholder="Description"></textarea>
+                      </div>
+                      <div class="form-group">
+                        <button type="submit" class="btn btn-blue" id="create-project">Create Project</button>
+                      </div>
+                    </form>
+              </div>
+
+            </div>
+
           </div>
-          <div class="form-group">
-            <label for="login-user-password">Password</label>
-            <input type="password" class="form-control" id="login-user-password" placeholder="Password">
-          </div>
-          <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="rember-me">
-            <label class="form-check-label" for="remeber-me">Remember Me</label>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
       </div>
-    </div>
 
-  </div>
-
-  <script type="text/babel">
-    class App extends  React.Component{
-      render() {
-        return (
-          <div className="mt-3">
-            <h1>Login</h1>
-          </div>
-        )
-      }
-    }
-
-    ReactDOM.render(<App />, document.getElementById('app'));
-  </script>
 </body>
 
 </html>

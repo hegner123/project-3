@@ -4,8 +4,10 @@ var bodyParser  = require("body-parser");
 var session     = require("express-session");
 var passport    = require("./passport");
 var PORT        = process.env.PORT || 8080;
-var constants   = require('./src/config/constants');
+var mongoose = require("mongoose");
+var logger = require("morgan");
 var app         = express();
+
 
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -14,6 +16,8 @@ app.use(express.static("public"));
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(logger("dev"));
+mongoose.connect("mongodb://localhost/proproject", { useNewUrlParser: true });
 
 // If test force true
 

@@ -4,9 +4,55 @@
 
 body {
   background-image: repeating-linear-gradient(to bottom, #87ceeb , #45b3e0);
+  height:900px;
 }
 
-.section-left{
-  background-image: url(https://c8.alamy.com/comp/XD8DJ1/mixed-group-in-business-meeting-XD8DJ1.jpg);
-  height:initial;
+.img-bck{
+  background-image: url("https://c8.alamy.com/comp/XD8DJ1/mixed-group-in-business-meeting-XD8DJ1.jpg");
+  min-height: 100vh;
+}
+
+
+.login-block {
+  background: #87ceeb;
+  position: relative;
+}
+
+.btn-blue {
+  background: #44b3e0;
+  color:white;
+}
+
+.btn-blue:hover{
+  color:white;
+  background:#1e8bb7;
+}
+
+#project-display {
+  padding:100px;
+  background:white;
+}
+
+.project-form{
+  padding: 100px;
+  background:white;
+}
+
+.project-item{
+  padding: 20px;
+    background: grey;
+    color: white;
+    border-radius: 20px;
+    text-align: left;
+}
+
+.banner{
+  padding: 10px;
+  background: grey;
+}
+
+.task-item{
+  padding:20px;
+  background: white;
+  margin:15px;
 }
