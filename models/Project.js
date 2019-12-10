@@ -3,12 +3,25 @@ var mongoose = require("mongoose");
 // Save a reference to the Schema constructor
 var Schema = mongoose.Schema;
 
+var assignedUserSchema = new Schema({
+  userName: {
+    type: String,
+    required:true
+  },
+  userID: {
+    type: String,
+    required: true
+  }
+})
+
+
 var TaskSchema = new Schema({
   title: {
 type:String,
 required: true
   },
   text: String,
+  assignedUsers: [assignedUserSchema],
   dueDate: {
     type: Date,
     default: new Date

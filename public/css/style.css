@@ -26,13 +26,13 @@ body {
   background:#1e8bb7;
 }
 /* style for project display area */
-.project-display {
-  padding:100px;
+.project-area {
+  
   background:white;
 }
 /* style for create project form on projects page */
 .project-form{
-  padding: 100px;
+  
   background:white;
 }
 /* style for project listings on projects page */

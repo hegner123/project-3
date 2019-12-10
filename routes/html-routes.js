@@ -1,4 +1,5 @@
 var path = require('path');
+var csv  = require('csv-express');
 var db = require("../models");
 
 module.exports = function (app) {
@@ -73,6 +74,23 @@ module.exports = function (app) {
   // { new: true } tells the query that we want it to return the updated User -- it returns the original by default
   // Since our mongoose query returns a promise, we can chain another `.then` which receives the result of the query
 
+  app.get('/projects/export/:id', function(req, res, next) {
+      var filename   = "project.csv";
+      db.Project.find({_id:req.params.id}).lean().exec({}, function(err, project) {
+
+          if (err) res.send(err);
+
+          res.statusCode = 200;
+
+          res.setHeader('Content-Type', 'text/csv');
+
+          res.setHeader("Content-Disposition", 'attachment; filename='+filename);
+
+          res.csv(project, true);
+
+      });
+
+   });
 
 
 
