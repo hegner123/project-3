@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  AOS.init();
   refreshProjects()
 
   var projectTitle = $("#project-title");
@@ -47,22 +48,22 @@ $(document).ready(function () {
                                         <div class="project-item project-item` + [i] + ` mt-5">
                                           <div class="row">
                                               <div class="col-10">
-                                              <h5>` + data[i].title + `</h5>
-                                              <p>` + data[i].body + `</p>
-                                              <a href="/projects/export/`+data[i]._id+`" target="_none">Export Project Data</a>
+                                              <h5> ${data[i].title} </h5>
+                                              <p> ${data[i].body}</p>
+                                              <a href="/projects/export/ ${data[i]._id}" target="_none">Export Project Data</a>
 
-                                              <p>Number of Tasks:` + data[i].tasks.length + ` </p>
-                                              <button class="btn btn-blue project-button d-inline-block" data-id="` + data[i]._id + `">Edit Tasks</button>
+                                              <p>Number of Tasks: ${data[i].tasks.length}</p>
+                                              <button class="btn btn-blue project-button d-inline-block" data-id="${data[i]._id}">Edit Tasks</button>
                                               </div>
                                             <div class=" tasks"></div>
                                           </div>
                                         </div>
                                       </div>`);
-        $(".projectitem" + [i] + ".tasks").empty();
+        $(`.projectitem ${i}.tasks`).empty();
         for (k = 0; k < data[i].tasks.length; k++) {
           console.log(data[i].tasks[k])
           var projectTaskItem = data[i].tasks[k]
-          $(".project-item" + [i]).append("<p>" + projectTaskItem.title + "</p>");
+          $(`.project-item${[i]}`).append(`<p> ${projectTaskItem.title}</p>`);
           if (!projectTaskItem.title) {
             $(".project-item" + [i]).append("<p>No Title</p>");
           }

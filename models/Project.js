@@ -12,7 +12,7 @@ var assignedUserSchema = new Schema({
     type: String,
     required: true
   }
-})
+});
 
 
 var TaskSchema = new Schema({

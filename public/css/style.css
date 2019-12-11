@@ -1,19 +1,21 @@
+
+
 /* blue gradient background */
 body {
-  background-image: repeating-linear-gradient(to bottom, #87ceeb , #45b3e0);
+  background-image: repeating-linear-gradient(to bottom, #87ceeb , #45b3e0) ;
   min-height: 100vh;
 }
 /* image background for homepage min height is 100% of viewport */
 .img-bck{
-  background: url("https://c8.alamy.com/comp/XD8DJ1/mixed-group-in-business-meeting-XD8DJ1.jpg") no-repeat center;
+  background: url("https://c8.alamy.com/comp/XD8DJ1/mixed-group-in-business-meeting-XD8DJ1.jpg") no-repeat center fixed;
   min-height: 100vh;
-  
 }
 
 /* style for login block on homepage */
 .login-block {
-  background: #87ceeb;
+  background: rgba(135, 207, 235, 0.685);
   position: relative;
+  right:4rem;
 }
 /* sky blue button style */
 .btn-blue {
@@ -48,4 +50,8 @@ body {
   padding:20px;
   background: white;
   margin:15px;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
