@@ -61,12 +61,9 @@ module.exports = function (app) {
       title: thisTaskTitle,
       body: thisTaskBody,
     };
-    db.Project.findOneAndUpdate({
-        _id: thisProject
-      }, {
-        $push: {
-          tasks: newTask
-        }
+    db.Project.findOneAndUpdate({ _id: thisProject}, { $push: {
+                                                          tasks: newTask
+                                                        }
       }).then(function (data) {
         console.log(data)
       })

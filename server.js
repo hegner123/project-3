@@ -7,7 +7,6 @@ var mongoose    = require("mongoose");
 var passport    = require("./passport");
 var session     = require("express-session");
 var PORT        = process.env.PORT || 8080;
-
 var app         = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -17,8 +16,8 @@ app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true 
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(logger("dev"));
-mongoose.connect("mongodb://localhost/proproject", { useNewUrlParser: true });
-
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 // If test force true
 
 var syncOptions = { force: false };
