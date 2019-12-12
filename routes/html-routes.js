@@ -1,6 +1,7 @@
-var path = require('path');
-var csv  = require('csv-express');
-var db = require("../models");
+let path = require('path');
+
+let db = require("../models");
+let csv = require('csv-express');
 
 module.exports = function (app) {
   //
@@ -69,16 +70,13 @@ module.exports = function (app) {
       }).then(function (data) {
         console.log(data)
       })
-  })
-  // If a Note was created successfully, find one Article with an `_id` equal to `req.params.id`. Update the Article to be associated with the new Note
-  // { new: true } tells the query that we want it to return the updated User -- it returns the original by default
-  // Since our mongoose query returns a promise, we can chain another `.then` which receives the result of the query
+  });
 
   app.get('/projects/export/:id', function(req, res, next) {
       var filename   = "project.csv";
       db.Project.find({_id:req.params.id}).lean().exec({}, function(err, project) {
 
-          if (err) res.send(err);
+          if (err){res.send(err)} ;
 
           res.statusCode = 200;
 

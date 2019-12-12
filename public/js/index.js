@@ -42,21 +42,20 @@ $(document).ready(function () {
       for (i = 0; i < data.length; i++) {
         // use `` to display strings on multiple lines
         $("#project-display").append(`
-                                      <button class="btn btn-blue mt-3" type="button" data-toggle="collapse" data-target="#project-item-` + [i] + `" aria-expanded="false" aria-controls="collapseExample">` + data[i].title + `</button>
+                                      <button class="btn btn-blue mt-3" type="button" data-toggle="collapse" data-target="#project-item-${[i]}" aria-expanded="false" aria-controls="collapseExample">${data[i].title}</button>
                                       <br>
-                                      <div class="collapse" id="project-item-` + [i] + `">
-                                        <div class="project-item project-item` + [i] + ` mt-5">
+                                      <div class="collapse" id="project-item-${[i]}">
+                                        <div class="project-item project-item${[i]} mt-5">
                                           <div class="row">
                                               <div class="col-10">
-                                              <h5> ${data[i].title} </h5>
-                                              <p> ${data[i].body}</p>
-                                              <a href="/projects/export/ ${data[i]._id}" target="_none">Export Project Data</a>
-
-                                              <p>Number of Tasks: ${data[i].tasks.length}</p>
+                                              <h5>${data[i].title} </h5>
+                                              <p>${data[i].body}</p>
+                                              <p>Number of Tasks:${data[i].tasks.length}</p>
                                               <button class="btn btn-blue project-button d-inline-block" data-id="${data[i]._id}">Edit Tasks</button>
                                               </div>
                                             <div class=" tasks"></div>
                                           </div>
+                                          <a href="/projects/export/${data[i]._id}" target="_none" class="btn btn-blue">Export Project Data</a>
                                         </div>
                                       </div>`);
         $(`.projectitem ${i}.tasks`).empty();
